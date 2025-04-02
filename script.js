@@ -12,14 +12,15 @@ const calculate = () => {
   <div>Total Amount: <span>${amount.toFixed(2)}</span></div>`;
 };
   
-  
-  const calculateSimpleInterest = (principal, rate, time) => {
-    return (principal * rate * time) / 100;
-  }
-  
-  const calculateTotalPayableAmount = (principal, interestAmount) => {
-    return principal - interestAmount;
-  }
+const calculateSimpleInterest = (principal, rate, time) => {
+  return (principal * rate * time) / 100;
+};
 
-  if (typeof module !== 'undefined')
-    module.exports = { calculateSimpleInterest, calculateTotalPayableAmount, calculate };
+const calculateTotalPayableAmount = (principal, interestAmount) => {
+  return principal + interestAmount;  // ✅ Fixed: Changed "-" to "+"
+};
+
+// Export functions for testing
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { calculateSimpleInterest, calculateTotalPayableAmount, calculate };
+}
