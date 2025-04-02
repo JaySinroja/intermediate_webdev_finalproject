@@ -21,6 +21,6 @@ const calculateTotalPayableAmount = (principal, interestAmount) => {
 };
 
 // Export functions for testing
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { calculateSimpleInterest, calculateTotalPayableAmount, calculate };
+if (typeof module !== 'undefined') {
+  module.exports = { calculateSimpleInterest, calculateTotalPayableAmount };
 }
